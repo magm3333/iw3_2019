@@ -1,13 +1,17 @@
 package com.example.demo.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="productos")
 public class Producto {
 
 	@Id
 	private int id;
+	@Column(length = 100)
 	private String descripcion;
 	private double precio;
 	public double getPrecio() {
