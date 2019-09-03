@@ -25,7 +25,7 @@ public class ProductoBusiness implements IProductoBusiness {
 		try {
 			return productoDAO.findAll();
 		} catch (Exception e) {
-			log.error(e.getMessage(),e);
+			log.error(e.getMessage(), e);
 			throw new BusinessException(e);
 		}
 
@@ -43,7 +43,14 @@ public class ProductoBusiness implements IProductoBusiness {
 
 	@Override
 	public void remove(int idProducto) throws BusinessException, NotFoundException {
-		Optional<Producto> op = productoDAO.findById(idProducto);
+		Optional<Producto> op = null;
+
+		try {
+			op = productoDAO.findById(idProducto);
+		} catch (Exception e) {
+			throw new BusinessException(e);
+		}
+
 		if (!op.isPresent())
 			throw new NotFoundException("No se encuentra el producto con id=" + idProducto);
 		try {
@@ -51,6 +58,20 @@ public class ProductoBusiness implements IProductoBusiness {
 		} catch (Exception e) {
 			throw new BusinessException(e);
 		}
+
+	}
+
+	@Override
+	public Producto load(int idProducto) throws BusinessException, NotFoundException {
+		Optional<Producto> op = null;
+		try {
+			op = productoDAO.findById(idProducto);
+		} catch (Exception e) {
+			throw new BusinessException(e);
+		}
+		if (!op.isPresent())
+			throw new NotFoundException("No se encuentra el producto con id=" + idProducto);
+		return op.get();
 
 	}
 

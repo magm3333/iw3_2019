@@ -1,0 +1,9 @@
+package com.example.demo.web;
+
+public final class Constantes {
+
+	public Constantes() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
