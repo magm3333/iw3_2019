@@ -6,5 +6,6 @@ public final class Constantes {
 	public static final String URL_BASE = URL_API_BASE + URL_API_VERSION;
 
 	public static final String URL_BASE_PRODUCTOS = URL_BASE + "/productos";
+	public static final String URL_BASE_ARCHIVOS = URL_BASE + "/archivos";
 
 }
