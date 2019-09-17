@@ -1,0 +1,40 @@
+package com.example.demo.business;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.model.Archivo;
+
+@Service
+public class ArchivoBusiness implements IArchivoBusiness {
+
+	public ArchivoBusiness() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public Archivo load(int id) throws BusinessException, NotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Archivo save(Archivo archivo) throws BusinessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(int id) throws BusinessException, NotFoundException {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<Archivo> list() throws BusinessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

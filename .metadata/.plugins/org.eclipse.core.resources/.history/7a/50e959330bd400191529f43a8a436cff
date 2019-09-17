@@ -1,0 +1,9 @@
+package com.example.demo.model;
+
+public class Archivo {
+
+	public Archivo() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
