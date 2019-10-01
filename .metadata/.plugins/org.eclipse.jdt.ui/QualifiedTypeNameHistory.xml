@@ -21,4 +21,10 @@
 <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
 <fullyQualifiedTypeName name="com.example.demo.web.Constantes"/>
 <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+<fullyQualifiedTypeName name="javax.persistence.NamedNativeQueries"/>
+<fullyQualifiedTypeName name="javax.persistence.NamedNativeQuery"/>
+<fullyQualifiedTypeName name="javax.persistence.SqlResultSetMappings"/>
+<fullyQualifiedTypeName name="javax.persistence.ConstructorResult"/>
+<fullyQualifiedTypeName name="com.example.demo.model.dto.UsuarioDTO"/>
+<fullyQualifiedTypeName name="javax.persistence.ColumnResult"/>
 </qualifiedTypeNameHistroy>

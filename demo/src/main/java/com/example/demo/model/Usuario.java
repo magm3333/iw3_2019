@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -62,7 +63,7 @@ public class Usuario implements UserDetails {
 	@JoinTable(name = "usuarios_roles", joinColumns = {
 			@JoinColumn(name = "idUsuario", referencedColumnName = "id") }, inverseJoinColumns = {
 					@JoinColumn(name = "idRol", referencedColumnName = "id") })
-	private Set<Rol> roles;
+	private Set<Rol> roles=new HashSet<Rol>();
 
 	public Set<Rol> getRoles() {
 		return roles;

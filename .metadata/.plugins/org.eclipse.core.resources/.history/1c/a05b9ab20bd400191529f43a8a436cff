@@ -1,7 +1,0 @@
-package com.example.demo.business;
-
-public interface IArchivoBusiness {
-
-	public Archivo load(int id) throws BusinessException, NotFoundException;
-
-}

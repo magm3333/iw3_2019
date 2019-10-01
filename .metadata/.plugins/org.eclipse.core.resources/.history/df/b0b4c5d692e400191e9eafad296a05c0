@@ -1,0 +1,17 @@
+package com.example.demo.business;
+
+import com.example.demo.model.Usuario;
+
+public class UsuarioBusiness implements IUsuarioBusiness {
+
+	public UsuarioBusiness() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public Usuario load(String username) throws BusinessException, NotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Rol;
@@ -14,7 +15,8 @@ import com.example.demo.persistence.UsuarioRepository;
 
 @Service
 public class DefaultData {
-
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	@Autowired
 	private UsuarioRepository usuarioDAO;
 
@@ -29,8 +31,11 @@ public class DefaultData {
 			r.setFirstName("Administrador");
 			r.setLastName("García");
 			r.setEmail("admin@mail.com");
-			r.setPassword("password");
+			r.setPassword(passwordEncoder.encode("password"));
 			r.setEnabled(true);
+			r.setAccountNonExpired(true);
+			r.setAccountNonLocked(true);
+			r.setCredentialsNonExpired(true);
 			Set<Rol> roles=new HashSet<Rol>();
 			roles.add(ensureRoleAdmin());
 			roles.add(ensureRoleUser());
