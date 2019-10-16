@@ -2,9 +2,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script type="text/javascript" src="modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
 <title></title>
 </head>
-<body>
-<img src="/api/v1/archivos/1">
+<body ng-app="iw3">
+
+{{1+2}}
+<div ng-controller="controlador1">
+<input type="number" ng-model="numero"/>
+<p style="font-size: {{numero}}px">Texto</p>
+</div>
+
 </body>
 </html>

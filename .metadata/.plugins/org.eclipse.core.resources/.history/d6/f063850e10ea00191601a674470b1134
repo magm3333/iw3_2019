@@ -1,0 +1,16 @@
+package com.example.demo.business;
+
+import org.hibernate.service.spi.ServiceException;
+
+import com.example.demo.model.AuthToken;
+
+public interface IAuthTokenService {
+	public AuthToken save(AuthToken at) throws ServiceException;
+
+	public AuthToken load(String series) throws ServiceException, NotFoundException;
+
+	public void delete(AuthToken at) throws ServiceException;
+	
+	public void purgeTokens() throws ServiceException;
+
+}

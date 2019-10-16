@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+/home/mariano/borrar/iw3_2019/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1087214333.index
+3703128891.index
+4292106573.index
+867228886.index
+1595378203.index

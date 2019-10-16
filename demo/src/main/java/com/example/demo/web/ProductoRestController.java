@@ -22,7 +22,7 @@ import com.example.demo.model.Producto;
 
 @RestController
 @RequestMapping(Constantes.URL_BASE_PRODUCTOS)
-public class ProductoRestController {
+public class ProductoRestController extends BaseRestController{
 
 	@Autowired
 	private IProductoBusiness productoBusiness;

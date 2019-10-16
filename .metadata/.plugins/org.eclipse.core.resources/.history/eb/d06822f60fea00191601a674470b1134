@@ -1,0 +1,65 @@
+package com.example.demo.business;
+
+import java.util.Date;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.schillig.truckflow.business.exception.ServiceException;
+import com.schillig.truckflow.model.AuthToken;
+import com.schillig.truckflow.model.exception.NotFoundException;
+import com.schillig.truckflow.model.persistence.AuthTokenRespository;
+
+@Service
+public class AuthTokenService implements IAuthTokenService {
+
+	@Autowired
+	private AuthTokenRespository authTokenDAO;
+
+	@Override
+	public AuthToken save(AuthToken at) throws ServiceException {
+		try {
+			return authTokenDAO.save(at);
+		} catch (Exception e) {
+			throw new ServiceException(e);
+		}
+	}
+
+	@Override
+	public AuthToken load(String series) throws ServiceException, NotFoundException {
+		Optional<AuthToken> atO;
+		try {
+			atO = authTokenDAO.findById(series);
+		} catch (Exception e) {
+			throw new ServiceException(e);
+		}
+		if (!atO.isPresent())
+			throw new NotFoundException("No se encuentra el token de autenticación serie=" + series);
+		return atO.get();
+	}
+
+	@Override
+	public void delete(AuthToken at) throws ServiceException {
+		try {
+			authTokenDAO.delete(at);
+		} catch (Exception e) {
+			// throw new ServiceException(e);
+		}
+
+	}
+
+	@Override
+	public void purgeTokens() throws ServiceException {
+		try {
+			authTokenDAO.purgeToDate(new Date());
+			authTokenDAO.purgeDefault(new Date());
+			authTokenDAO.purgeFromToDate(new Date());
+			authTokenDAO.purgeRequestLimit();
+		} catch (Exception e) {
+			throw new ServiceException(e);
+		}
+
+	}
+
+}

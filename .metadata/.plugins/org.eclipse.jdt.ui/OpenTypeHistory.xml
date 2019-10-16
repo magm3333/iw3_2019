@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=demo/\/home\/mariano\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.1.10.RELEASE\/spring-data-jpa-2.1.10.RELEASE.jar&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1566333717106"/>
-<typeInfo handle="=demo/src\/main\/java&lt;com.example.demo.business{IProductoBusiness.java[IProductoBusiness" modifiers="513" timestamp="1567542777069"/>
+<typeInfo handle="=demo/\/home\/mariano\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.1.10.RELEASE\/spring-data-jpa-2.1.10.RELEASE.jar&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1569860078324"/>
+<typeInfo handle="=demo/src\/main\/java&lt;com.example.demo.business{IProductoBusiness.java[IProductoBusiness" modifiers="513" timestamp="1567542777000"/>
+<typeInfo handle="=demo/\/home\/mariano\/.m2\/repository\/org\/springframework\/security\/spring-security-core\/5.1.6.RELEASE\/spring-security-core-5.1.6.RELEASE.jar&lt;org.springframework.security.core.userdetails(UserDetailsService.class[UserDetailsService" modifiers="1537" timestamp="1569860103421"/>
+<typeInfo handle="=demo/\/home\/mariano\/.m2\/repository\/org\/springframework\/security\/spring-security-core\/5.1.6.RELEASE\/spring-security-core-5.1.6.RELEASE.jar&lt;org.springframework.security.provisioning(UserDetailsManager.class[UserDetailsManager" modifiers="1537" timestamp="1569860103421"/>
+<typeInfo handle="=demo/src\/main\/java&lt;com.example.demo.business{IUsuarioBusiness.java[IUsuarioBusiness" modifiers="513" timestamp="1569965258035"/>
 </typeInfoHistroy>

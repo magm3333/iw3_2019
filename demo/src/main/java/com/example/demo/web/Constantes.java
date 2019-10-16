@@ -8,4 +8,11 @@ public final class Constantes {
 	public static final String URL_BASE_PRODUCTOS = URL_BASE + "/productos";
 	public static final String URL_BASE_ARCHIVOS = URL_BASE + "/archivos";
 
+	public static final String URL_DENY = "/deny";
+
+	public static final String URL_LOGINOK = "/loginok";
+	public static final String URL_AUTH_INFO =  "/authinfo";
+	public static final String URL_VERSION = "/version";
+	
+	public static final String URL_TOKEN = URL_BASE + "/token";
 }

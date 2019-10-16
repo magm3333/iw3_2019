@@ -1,0 +1,16 @@
+package com.schillig.truckflow.business;
+
+import com.schillig.truckflow.business.exception.ServiceException;
+import com.schillig.truckflow.model.AuthToken;
+import com.schillig.truckflow.model.exception.NotFoundException;
+
+public interface IAuthTokenService {
+	public AuthToken save(AuthToken at) throws ServiceException;
+
+	public AuthToken load(String series) throws ServiceException, NotFoundException;
+
+	public void delete(AuthToken at) throws ServiceException;
+	
+	public void purgeTokens() throws ServiceException;
+
+}

@@ -25,7 +25,7 @@ import com.example.demo.model.Archivo;
 
 @RestController
 @RequestMapping(Constantes.URL_BASE_ARCHIVOS)
-public class ArchivoRestController {
+public class ArchivoRestController extends BaseRestController{
 
 	@Autowired
 	private IArchivoBusiness archivoBusiness;
