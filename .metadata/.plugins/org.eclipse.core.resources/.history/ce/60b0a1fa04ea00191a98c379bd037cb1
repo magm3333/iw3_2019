@@ -1,9 +1,0 @@
-package com.example.demo;
-
-public class RedisServerEmbbededConfig {
-
-	public RedisServerEmbbededConfig() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
