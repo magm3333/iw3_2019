@@ -27,13 +27,20 @@ public class BaseRestController {
 
 	protected UserDetails getUserPrincipal() {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		UserDetails user = (UserDetails) auth.getPrincipal();
+		UserDetails user = null;
+		if (auth.getPrincipal() instanceof UserDetails) {
+			user = (UserDetails) auth.getPrincipal();
+		}
+
 		return user;
 	}
 
 	protected Usuario getUserLogged() {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		Usuario usuario = (Usuario) auth.getPrincipal();
+		Usuario usuario=null;
+		if (auth.getPrincipal() instanceof Usuario) { 
+			usuario = (Usuario) auth.getPrincipal();
+		}
 		return usuario;
 	}
 

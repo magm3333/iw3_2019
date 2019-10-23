@@ -2,8 +2,6 @@ package com.example.demo;
 
 import java.util.Arrays;
 
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,8 +14,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
-import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -49,7 +45,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		// return NoOpPasswordEncoder.getInstance();
 		return new BCryptPasswordEncoder();
 	}
-	
+
 	@Bean
 	CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
@@ -63,7 +59,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		source.registerCorsConfiguration("/**", configuration);
 		return source;
 	}
-	
+
 	@Autowired
 	private IAuthTokenService authTokenService;
 	@Autowired
@@ -75,32 +71,29 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				UsernamePasswordAuthenticationFilter.class);
 		http.httpBasic();
 		http.authorizeRequests().antMatchers("/api/v1/**").authenticated();
+		http.authorizeRequests().antMatchers(Constantes.URL_AUTH_INFO, Constantes.URL_LOGINOK, Constantes.URL_TOKEN)
+				.authenticated();
 
 		// http.formLogin().loginPage("/login.html").successForwardUrl("/index.html");
 		// http.logout().deleteCookies("JSESSIONID", "rmiw3");
-		//http.rememberMe().tokenRepository(rmRepository()).rememberMeParameter("rmp").rememberMeCookieName("rmiw3");
+		// http.rememberMe().tokenRepository(rmRepository()).rememberMeParameter("rmp").rememberMeCookieName("rmiw3");
 
 		http.formLogin().loginPage(Constantes.URL_DENY).successForwardUrl(Constantes.URL_LOGINOK)
 				.loginProcessingUrl("/dologin").failureUrl(Constantes.URL_DENY);
 
-		
 		http.headers().frameOptions().disable();
 		http.cors();
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-		
+
 		http.csrf().disable();
 	}
 
 	/*
-	@Autowired
-	private DataSource ds;
-
-	private PersistentTokenRepository rmRepository() {
-		JdbcTokenRepositoryImpl r = new JdbcTokenRepositoryImpl();
-		r.setDataSource(ds);
-		return r;
-	}
-	*/
+	 * @Autowired private DataSource ds;
+	 * 
+	 * private PersistentTokenRepository rmRepository() { JdbcTokenRepositoryImpl r
+	 * = new JdbcTokenRepositoryImpl(); r.setDataSource(ds); return r; }
+	 */
 	/*
 	 * CREATE TABLE `persistent_logins` ( `username` varchar(100) NOT NULL, `series`
 	 * varchar(64) NOT NULL, `token` varchar(64) NOT NULL, `last_used` timestamp NOT

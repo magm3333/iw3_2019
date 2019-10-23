@@ -31,6 +31,7 @@ public class CoreRestController extends BaseRestController {
 
 	@GetMapping(value = Constantes.URL_AUTH_INFO)
 	public ResponseEntity<String> authInfo() {
+		
 		return new ResponseEntity<String>(userToJson(getUserPrincipal()).toString(), HttpStatus.OK);
 	}
 
