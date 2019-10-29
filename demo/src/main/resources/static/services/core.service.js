@@ -12,7 +12,7 @@ angular.module('iw3').factory('coreService',function($http,URL_BASE){
 				method: 'POST',
 				url: URL_BASE+'dologin',
 				headers : { 'Content-Type': 'application/x-www-form-urlencoded' },
-				data: 'remember-me=true&username='+user.name+'&password='+user.password
+				data: 'username='+user.name+'&password='+user.password
 			};
 			return $http(req);
 		}
