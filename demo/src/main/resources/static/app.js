@@ -9,8 +9,11 @@ var app = angular.module('iw3');
 
 app.constant('URL_API_BASE', '/api/v1/')
 app.constant('URL_BASE', '/')
+.constant('URL_WS', '/api/v1/ws')
 
-app.run(function($rootScope, $location, $uibModal, coreService, $localStorage) {
+app.run(function($rootScope, $location, $uibModal, coreService, $localStorage, $stomp) {
+	
+	$rootScope.stomp=$stomp;
 	
 	$rootScope.oldLoc=false;
 	$rootScope.relocate=function(loc) {
